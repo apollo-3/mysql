@@ -1,0 +1,10 @@
+[Unit]
+Description=MySql server daemon
+After=network.target
+
+[Service]
+User=<%= @user %>
+ExecStart=<%= @path %>/bin/mysqld --defaults-file=<%= @path %>/my.cnf
+
+[Install]
+WantedBy=multi-user.target
